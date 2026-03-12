@@ -68,7 +68,12 @@ public class Reservation {
         this.date = date;
     }
 
-    
+    @Override
+    public String toString() {
+        return "Reservation [clientName=" + clientName + ", phoneNumber=" + phoneNumber + ", clientAddress="
+                + clientAddress + ", roomNumber=" + roomNumber + ", description=" + description + ", date=" + date
+                + "]";
+    }
 
     
 }
