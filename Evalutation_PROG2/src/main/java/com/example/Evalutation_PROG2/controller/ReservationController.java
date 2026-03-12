@@ -23,10 +23,16 @@ public class ReservationController {
 
     @PostMapping("/booking")
     public List<Reservation> createNewReservation(@RequestBody List<Reservation> reservation) {
+        boolean availability = true;
+        if (availability) {
+            
+        }
         List<Reservation> addReservation = this.repositoryService.addReservation(reservation);
         return addReservation;
         
     }
+
+
     
 
 }
