@@ -2,8 +2,12 @@ package com.example.Evalutation_PROG2.services;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.stereotype.Service;
+
 import com.example.Evalutation_PROG2.entities.Reservation;
 
+@Service
 public class RepoServiceImplemented implements RepositoryService{
     private List<Reservation> reservations = new ArrayList<>();
 
@@ -25,10 +29,20 @@ public class RepoServiceImplemented implements RepositoryService{
             ));
         
     }
+    
 
     @Override
     public List<Reservation> getAllReservation() {
         return reservations;
     }
-    
+
+
+    @Override
+    public List<Reservation> addReservation(List<Reservation> reservation) {
+        for (int i = 0; i < reservation.size(); i++) {
+            this.reservations.add(reservation.get(i));
+            
+        } 
+        return reservation;
+    }
 }
