@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RestController
 public class ReservationController {
     @Autowired
-    private RepositoryService repositoryService;
+    private ReservationService repositoryService;
 
     @GetMapping("/booking")
     public List<Reservation> getReservations() {
