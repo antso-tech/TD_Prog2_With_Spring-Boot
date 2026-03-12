@@ -6,11 +6,11 @@ public class Reservation {
     private String clientName;
     private String phoneNumber;
     private String clientAddress;
-    private String roomNumber;
+    private int roomNumber;
     private String description;
     private LocalDate date;
 
-    public Reservation(String clientName, String phoneNumber, String clientAddress, String roomNumber,
+    public Reservation(String clientName, String phoneNumber, String clientAddress, int roomNumber,
             String description, LocalDate date) {
         this.clientName = clientName;
         this.phoneNumber = phoneNumber;
@@ -32,7 +32,7 @@ public class Reservation {
         return clientAddress;
     }
 
-    public String getRoomNumber() {
+    public int getRoomNumber() {
         return roomNumber;
     }
 
@@ -56,7 +56,7 @@ public class Reservation {
         this.clientAddress = clientAddress;
     }
 
-    public void setRoomNumber(String roomNumber) {
+    public void setRoomNumber(int roomNumber) {
         this.roomNumber = roomNumber;
     }
 

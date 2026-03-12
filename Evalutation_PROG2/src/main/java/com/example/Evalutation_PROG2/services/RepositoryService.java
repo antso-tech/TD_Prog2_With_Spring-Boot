@@ -4,8 +4,5 @@ import java.util.*;
 
 public interface RepositoryService {
     List<Reservation> getAllReservation();
-    Reservation getReservationById(int id);
-    
-    
     
 }
