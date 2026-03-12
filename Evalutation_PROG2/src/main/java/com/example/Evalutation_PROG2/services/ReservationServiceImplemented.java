@@ -12,18 +12,18 @@ public class ReservationServiceImplemented implements ReservationService{
     private List<Reservation> reservations = new ArrayList<>();
 
     public ReservationServiceImplemented(){
-        reservations.add(new Reservation("Jean Dupont",  "0612345678", "jean.dupont@email.com",101, "Chambre simple avec vue sur jardin", LocalDate.of(2025, 9, 5)));
+        reservations.add(new Reservation("Jean Dupont",  "0612345678", "jean.dupont@email.com",3, "Chambre simple avec vue sur jardin", LocalDate.of(2025, 9, 5)));
         reservations.add(new Reservation("Marie Martin",
                 "0687654321",
                 "marie.martin@email.com", 
-                205,
+                8,
                 "Chambre double avec balcon",
                 LocalDate.of(2025, 9, 10)));
         reservations.add(      new Reservation(
                 "Pierre Durand",
                 "0798765432",
                 "pierre.durand@email.com",
-                312,
+                7,
                 "Suite familiale - 2 chambres",
                 LocalDate.of(2025, 9, 15)
             ));

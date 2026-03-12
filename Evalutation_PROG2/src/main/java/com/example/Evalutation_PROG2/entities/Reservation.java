@@ -9,6 +9,7 @@ public class Reservation {
     private int roomNumber;
     private String description;
     private LocalDate date;
+ 
 
     public Reservation(String clientName, String phoneNumber, String clientAddress, int roomNumber,
             String description, LocalDate date) {
