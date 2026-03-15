@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.Evalutation_PROG2.Service.*;
-import com.example.Evalutation_PROG2.Service.ReservationService.getReservation;
 
 @RestController
 public class Controller {
@@ -25,6 +25,7 @@ public class Controller {
     @PostMapping("/booking")
      public ResponseEntity<?> createReservation(@RequestBody List<ReservationService.getReservation> reservation) {
         boolean isAvailable = true;
+        int findRoomNumber = reservation.stream().mapToInt(res -> res.roomNumber()).sum();
 
         for (ReservationService.getReservation res : reservation) {
             LocalDate findReservationDate = res.date();
@@ -39,9 +40,15 @@ public class Controller {
         }  
     }
         if(!isAvailable){
-                return ResponseEntity.status(HttpStatusCode.valueOf(400)).body("Cette salle n'est pas disponible pour le moment !");
+                return ResponseEntity.status(HttpStatusCode.valueOf(409)).body("Cette salle n'est pas disponible pour le moment !");
 
         }
+
+        if(findRoomNumber > 10){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Cette Salle n'éxiste pas");
+
+        }
+
         reservationsList.addAll(reservation);
         return ResponseEntity.status(HttpStatusCode.valueOf(201)).body(reservationsList);   
 
