@@ -14,10 +14,12 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode
 public class Reservation{
-    private String name;
+    private String clientName;
     private String phoneNumber;
     private String clientAddress;
     private int roomNumber;
     private String description;
     private LocalDate date;
+
+    
 }
